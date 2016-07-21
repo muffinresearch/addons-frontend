@@ -1,0 +1,16 @@
+web:
+  build: ../
+  command: npm run build && npm run start
+  environment:
+    - NODE_APP_INSTANCE=disco
+    - NODE_ENV=uitests
+    - TERM=xterm-256color
+  ports:
+    - "4000:4000"
+
+nginx:
+  build: nginx-mitm/
+  ports:
+    - "443:443"
+  links:
+    - web:web

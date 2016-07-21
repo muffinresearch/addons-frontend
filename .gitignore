@@ -40,3 +40,8 @@ webpack-assets.json
 sri.json
 
 config/local*
+
+uitests/nginx-mitm/fake-certs/
+*.crt
+*.key
+*.csr
